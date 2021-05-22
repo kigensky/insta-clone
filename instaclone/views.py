@@ -11,6 +11,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication, permissions
 
+# from django import forms
+# from django.http import HttpResponse
+# from cloudinary.forms import cl_init_js_callbacks      
+# from .models import Photo
+# from .forms import PhotoForm
+
 
 def signup(request):
     if request.method == 'POST':
@@ -213,3 +219,17 @@ def follow(request, to_follow):
         follow_s = Follow(follower=request.user.profile, followed=user_profile3)
         follow_s.save()
         return redirect('user_profile', user_profile3.user.username)
+        
+        
+        
+        
+# def upload(request):
+#     context = dict( backend_form = PhotoForm())
+
+#     if request.method == 'POST':
+#       form = PhotoForm(request.POST, request.FILES)
+#     context['posted'] = form.instance
+#     if form.is_valid():
+#         form.save()
+
+#     return render(request, 'upload.html', context)        
