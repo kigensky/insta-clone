@@ -39,7 +39,7 @@
             {% for image in images %}
             <div class="card mb-4">
                 <div class="card-title">
-               
+                   
                     <img src="{{image.user.profile_picture.url}}" class="rounded-circle border ml-3 mt-2  mr-3"
                          alt="{{image.user.user.username}}" width="35" height="35">
                          
@@ -48,7 +48,8 @@
                 <div class="card-body mb-4">
                     
                     <a href="{% url 'comment' image.id %}"><div class="card-text"
-                         style="background-image:url({{ image.image.url }});;background-size: contain;position: sticky">
+                        style="background-image:url({{ image.image.url }});;background-size: contain;position: sticky">
+                       
                         <img src="{{image.image.url}}" style="" class="card-img" width="100%"/>
                     </div></a>
                 </div>
